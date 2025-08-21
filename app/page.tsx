@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const Page = () => {
   const calculateDuration = (startDate: string, endDate: string) => {
     const parseDate = (dateStr: string) => {
@@ -99,7 +101,7 @@ const Page = () => {
               LinkedIn: "https://www.linkedin.com/in/equixdev/",
               GitHub: "https://github.com/equixdev",
             }).map(([key, value]) => (
-              <a href={value} className="underline text-[#5162FF]">
+              <a key={key} href={value} className="underline text-[#5162FF]">
                 {key}
               </a>
             ))}
@@ -169,7 +171,7 @@ const Page = () => {
           <p>Software development — Extern, 2019 — 2020</p>
         </section>
         <div className="flex justify-center">
-          <img src="/sign.svg" alt="Signature" className="w-16 h-auto" />
+          <Image src="/sign.svg" alt="Signature" width={64} height={64} className="w-16 h-auto" />
         </div>
       </div>
   );
